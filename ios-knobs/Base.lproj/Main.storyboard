@@ -80,7 +80,17 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayP-yl-mSN">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="221"/>
+                                                <subviews>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xkb-ZM-SBe">
+                                                        <rect key="frame" x="17" y="95.5" width="154" height="31"/>
+                                                    </slider>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="xkb-ZM-SBe" firstAttribute="width" secondItem="ayP-yl-mSN" secondAttribute="width" multiplier="0.8" id="EI9-NJ-G70"/>
+                                                    <constraint firstItem="xkb-ZM-SBe" firstAttribute="centerY" secondItem="ayP-yl-mSN" secondAttribute="centerY" id="oNU-G4-RY7"/>
+                                                    <constraint firstItem="xkb-ZM-SBe" firstAttribute="centerX" secondItem="ayP-yl-mSN" secondAttribute="centerX" id="rs0-bd-Gu6"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
@@ -106,6 +116,8 @@
                     </view>
                     <connections>
                         <outlet property="knob" destination="luO-OL-8Co" id="NSO-YF-rU3"/>
+                        <outlet property="valueLabel" destination="3cl-WN-FBH" id="D2T-ke-MlL"/>
+                        <outlet property="valueSlider" destination="xkb-ZM-SBe" id="Tmc-ts-VDX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
