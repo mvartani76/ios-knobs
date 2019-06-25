@@ -22,6 +22,9 @@ class ViewController: UIViewController {
         knob.pointerLength = 12
     }
 
-
+    @IBAction func handleSliderValueChanged(_ sender: UISlider) {
+        knob.setValue(valueSlider.value)
+    }
+    
 }
 
