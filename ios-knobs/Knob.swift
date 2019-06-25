@@ -1,19 +1,44 @@
 import UIKit
 
-var minimumValue: Float = 0
-var maximumValue: Float = 1
-
-private (set) var value: Float = 0
-
-func setValue(_ newValue: Float, animated: Bool = false) {
-    value = min(maximumValue, max(minimumValue, newValue))
-}
-
-var isContinuous = true
-
 class Knob: UIControl {
+
+    var minimumValue: Float = 0
+    var maximumValue: Float = 1
+    
+    private (set) var value: Float = 0
+    
+    func setValue(_ newValue: Float, animated: Bool = false) {
+        value = min(maximumValue, max(minimumValue, newValue))
+        
+        let angleRange = endAngle - startAngle
+        let valueRange = maximumValue - minimumValue
+        let angleValue = CGFloat(value - minimumValue) / CGFloat(valueRange) * angleRange + startAngle
+        renderer.setPointerAngle(angleValue, animated: animated)
+    }
+
+    var isContinuous = true
     
     private let renderer = KnobRenderer()
+
+    var lineWidth: CGFloat {
+        get { return renderer.lineWidth }
+        set { renderer.lineWidth = newValue }
+    }
+    
+    var startAngle: CGFloat {
+        get { return renderer.startAngle }
+        set { renderer.startAngle = newValue }
+    }
+    
+    var endAngle: CGFloat {
+        get { return renderer.endAngle }
+        set { renderer.endAngle = newValue }
+    }
+    
+    var pointerLength: CGFloat {
+        get { return renderer.pointerLength }
+        set { renderer.pointerLength = newValue }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
