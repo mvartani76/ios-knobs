@@ -83,6 +83,9 @@
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xkb-ZM-SBe">
                                                         <rect key="frame" x="17" y="95.5" width="154" height="31"/>
+                                                        <connections>
+                                                            <action selector="handleSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="waB-ty-DGE"/>
+                                                        </connections>
                                                     </slider>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
