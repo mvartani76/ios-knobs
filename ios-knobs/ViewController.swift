@@ -20,12 +20,12 @@ class ViewController: UIViewController {
         
         knob.lineWidth = 4
         knob.pointerLength = 12
-        knob.setValue(valueSlider.value)
+        knob.setValue(valueSlider.value, animated: true)
         updateLabel()
     }
 
     @IBAction func handleSliderValueChanged(_ sender: UISlider) {
-        knob.setValue(valueSlider.value)
+        knob.setValue(valueSlider.value, animated: true)
         updateLabel()
     }
     
