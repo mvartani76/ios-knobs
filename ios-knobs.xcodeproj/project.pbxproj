@@ -12,7 +12,7 @@
 		2247966522C0730D00F7E9A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247966322C0730D00F7E9A7 /* Main.storyboard */; };
 		2247966722C0730F00F7E9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2247966622C0730F00F7E9A7 /* Assets.xcassets */; };
 		2247966A22C0730F00F7E9A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247966822C0730F00F7E9A7 /* LaunchScreen.storyboard */; };
-		2247967222C0757D00F7E9A7 /* Knob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247967122C0757D00F7E9A7 /* Knob.swift */; };
+		2247967222C0757D00F7E9A7 /* Knob1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247967122C0757D00F7E9A7 /* Knob1.swift */; };
 		227378AA22CA58C0009DC2FE /* Knob2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378A922CA58C0009DC2FE /* Knob2ViewController.swift */; };
 		227378AC22CA599B009DC2FE /* Knob2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378AB22CA599B009DC2FE /* Knob2.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		2247966622C0730F00F7E9A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2247966922C0730F00F7E9A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2247966B22C0730F00F7E9A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2247967122C0757D00F7E9A7 /* Knob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob.swift; sourceTree = "<group>"; };
+		2247967122C0757D00F7E9A7 /* Knob1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob1.swift; sourceTree = "<group>"; };
 		227378A922CA58C0009DC2FE /* Knob2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob2ViewController.swift; sourceTree = "<group>"; };
 		227378AB22CA599B009DC2FE /* Knob2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +60,7 @@
 		2247965E22C0730D00F7E9A7 /* ios-knobs */ = {
 			isa = PBXGroup;
 			children = (
-				2247967122C0757D00F7E9A7 /* Knob.swift */,
+				2247967122C0757D00F7E9A7 /* Knob1.swift */,
 				227378AB22CA599B009DC2FE /* Knob2.swift */,
 				2247965F22C0730D00F7E9A7 /* AppDelegate.swift */,
 				2247966122C0730D00F7E9A7 /* Knob1ViewController.swift */,
@@ -146,7 +146,7 @@
 			files = (
 				2247966222C0730D00F7E9A7 /* Knob1ViewController.swift in Sources */,
 				227378AC22CA599B009DC2FE /* Knob2.swift in Sources */,
-				2247967222C0757D00F7E9A7 /* Knob.swift in Sources */,
+				2247967222C0757D00F7E9A7 /* Knob1.swift in Sources */,
 				2247966022C0730D00F7E9A7 /* AppDelegate.swift in Sources */,
 				227378AA22CA58C0009DC2FE /* Knob2ViewController.swift in Sources */,
 			);
