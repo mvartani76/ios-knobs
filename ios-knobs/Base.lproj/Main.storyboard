@@ -136,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-rf-CTf">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-rf-CTf" userLabel="Knob2StackView">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4q-dW-kec" userLabel="TopBufferView">
@@ -195,6 +195,70 @@
             </objects>
             <point key="canvasLocation" x="1076" y="874"/>
         </scene>
+        <!--Knob 3-->
+        <scene sceneID="VoH-Df-mBe">
+            <objects>
+                <viewController id="2FW-xf-Dwj" userLabel="Knob 3" customClass="Knob3ViewController" customModule="ios_knobs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Xn-xd-Wit">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pgn-lt-v3t" userLabel="Knob3StackView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ku-AM-O5y" userLabel="TopBufferView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-yd-DsT" userLabel="Knob3" customClass="Knob3" customModule="ios_knobs" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="199"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2r4-mH-CmN" userLabel="LabelView">
+                                        <rect key="frame" x="0.0" y="398.5" width="375" height="199.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBX-ju-uMq">
+                                                <rect key="frame" x="166.5" y="89.5" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="sBX-ju-uMq" firstAttribute="centerX" secondItem="2r4-mH-CmN" secondAttribute="centerX" id="eN7-Jb-l1y"/>
+                                            <constraint firstItem="sBX-ju-uMq" firstAttribute="centerY" secondItem="2r4-mH-CmN" secondAttribute="centerY" id="iJB-Lb-gfh"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="2r4-mH-CmN" firstAttribute="width" secondItem="8gz-yd-DsT" secondAttribute="width" id="2Z8-xJ-Mlz"/>
+                                    <constraint firstItem="2r4-mH-CmN" firstAttribute="height" secondItem="8gz-yd-DsT" secondAttribute="height" id="PAP-al-Cno"/>
+                                    <constraint firstItem="8gz-yd-DsT" firstAttribute="height" secondItem="7ku-AM-O5y" secondAttribute="height" id="RBl-i9-ZJZ"/>
+                                    <constraint firstItem="8gz-yd-DsT" firstAttribute="width" secondItem="7ku-AM-O5y" secondAttribute="width" id="VrX-4a-npY"/>
+                                    <constraint firstItem="7ku-AM-O5y" firstAttribute="width" secondItem="pgn-lt-v3t" secondAttribute="width" id="yuz-eS-2bV"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pgn-lt-v3t" firstAttribute="width" secondItem="AgG-I7-OLl" secondAttribute="width" id="3MO-Mj-LCQ"/>
+                            <constraint firstItem="pgn-lt-v3t" firstAttribute="centerY" secondItem="AgG-I7-OLl" secondAttribute="centerY" id="Clt-eN-ekX"/>
+                            <constraint firstItem="pgn-lt-v3t" firstAttribute="centerX" secondItem="AgG-I7-OLl" secondAttribute="centerX" id="PE5-Pd-gJB"/>
+                            <constraint firstItem="pgn-lt-v3t" firstAttribute="height" secondItem="AgG-I7-OLl" secondAttribute="height" id="dwG-tK-RIe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AgG-I7-OLl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Knob 3" id="Y9h-O9-Yez" userLabel="Knob 3"/>
+                    <connections>
+                        <outlet property="knob3" destination="8gz-yd-DsT" id="zQq-nj-St1"/>
+                        <outlet property="valueLabel" destination="sBX-ju-uMq" id="G5E-CH-zX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OO7-se-3o8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="1591"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bbd-63-k57">
             <objects>
@@ -207,6 +271,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="zWw-X6-cmS"/>
                         <segue destination="fOq-by-eff" kind="relationship" relationship="viewControllers" id="NlJ-RA-Gy6"/>
+                        <segue destination="2FW-xf-Dwj" kind="relationship" relationship="viewControllers" id="Ia9-O0-qbL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-eh-8rz" userLabel="First Responder" sceneMemberID="firstResponder"/>

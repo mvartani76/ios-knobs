@@ -15,6 +15,8 @@
 		2247967222C0757D00F7E9A7 /* Knob1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247967122C0757D00F7E9A7 /* Knob1.swift */; };
 		227378AA22CA58C0009DC2FE /* Knob2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378A922CA58C0009DC2FE /* Knob2ViewController.swift */; };
 		227378AC22CA599B009DC2FE /* Knob2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378AB22CA599B009DC2FE /* Knob2.swift */; };
+		227378AE22CA8796009DC2FE /* Knob3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378AD22CA8796009DC2FE /* Knob3ViewController.swift */; };
+		227378B022CA8849009DC2FE /* Knob3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227378AF22CA8849009DC2FE /* Knob3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2247967122C0757D00F7E9A7 /* Knob1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob1.swift; sourceTree = "<group>"; };
 		227378A922CA58C0009DC2FE /* Knob2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob2ViewController.swift; sourceTree = "<group>"; };
 		227378AB22CA599B009DC2FE /* Knob2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob2.swift; sourceTree = "<group>"; };
+		227378AD22CA8796009DC2FE /* Knob3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob3ViewController.swift; sourceTree = "<group>"; };
+		227378AF22CA8849009DC2FE /* Knob3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knob3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +66,11 @@
 			children = (
 				2247967122C0757D00F7E9A7 /* Knob1.swift */,
 				227378AB22CA599B009DC2FE /* Knob2.swift */,
+				227378AF22CA8849009DC2FE /* Knob3.swift */,
 				2247965F22C0730D00F7E9A7 /* AppDelegate.swift */,
 				2247966122C0730D00F7E9A7 /* Knob1ViewController.swift */,
 				227378A922CA58C0009DC2FE /* Knob2ViewController.swift */,
+				227378AD22CA8796009DC2FE /* Knob3ViewController.swift */,
 				2247966322C0730D00F7E9A7 /* Main.storyboard */,
 				2247966622C0730F00F7E9A7 /* Assets.xcassets */,
 				2247966822C0730F00F7E9A7 /* LaunchScreen.storyboard */,
@@ -148,6 +154,8 @@
 				227378AC22CA599B009DC2FE /* Knob2.swift in Sources */,
 				2247967222C0757D00F7E9A7 /* Knob1.swift in Sources */,
 				2247966022C0730D00F7E9A7 /* AppDelegate.swift in Sources */,
+				227378AE22CA8796009DC2FE /* Knob3ViewController.swift in Sources */,
+				227378B022CA8849009DC2FE /* Knob3.swift in Sources */,
 				227378AA22CA58C0009DC2FE /* Knob2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
