@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Knob 1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_knobs" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Knob 1" customClass="ViewController" customModule="ios_knobs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="wdH-5C-xou"/>
+                    <tabBarItem key="tabBarItem" title="Knob 1" id="wdH-5C-xou" userLabel="Knob 1"/>
                     <connections>
                         <outlet property="knob" destination="luO-OL-8Co" id="NSO-YF-rU3"/>
                         <outlet property="valueLabel" destination="3cl-WN-FBH" id="D2T-ke-MlL"/>
@@ -127,6 +127,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="110.19490254872565"/>
+        </scene>
+        <!--Knob 2-->
+        <scene sceneID="Ebn-OI-eS3">
+            <objects>
+                <viewController id="fOq-by-eff" userLabel="Knob 2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bS8-bd-bWr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="rlA-HM-yRt"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Knob 2" id="9AJ-n3-aSZ" userLabel="Knob 2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-B4-Gbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="874"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bbd-63-k57">
@@ -139,6 +155,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="zWw-X6-cmS"/>
+                        <segue destination="fOq-by-eff" kind="relationship" relationship="viewControllers" id="NlJ-RA-Gy6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-eh-8rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
