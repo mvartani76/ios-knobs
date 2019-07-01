@@ -20,11 +20,17 @@ class ViewController: UIViewController {
         
         knob.lineWidth = 4
         knob.pointerLength = 12
+        knob.setValue(valueSlider.value)
+        updateLabel()
     }
 
     @IBAction func handleSliderValueChanged(_ sender: UISlider) {
         knob.setValue(valueSlider.value)
+        updateLabel()
     }
     
+    func updateLabel() {
+        valueLabel.text = String(format: "%.2f", knob.value)
+    }
 }
 
