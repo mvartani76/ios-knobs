@@ -131,14 +131,62 @@
         <!--Knob 2-->
         <scene sceneID="Ebn-OI-eS3">
             <objects>
-                <viewController id="fOq-by-eff" userLabel="Knob 2" sceneMemberID="viewController">
+                <viewController id="fOq-by-eff" userLabel="Knob 2" customClass="Knob2ViewController" customModule="ios_knobs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bS8-bd-bWr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dNm-rf-CTf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4q-dW-kec" userLabel="TopBufferView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-Xj-rSb" customClass="Knob2" customModule="ios_knobs" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="199.5" width="375" height="199"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4u-gn-Z3w" userLabel="LabelView">
+                                        <rect key="frame" x="0.0" y="398.5" width="375" height="199.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8o-Xd-eSt">
+                                                <rect key="frame" x="166.5" y="89.5" width="42" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="w8o-Xd-eSt" firstAttribute="centerY" secondItem="X4u-gn-Z3w" secondAttribute="centerY" id="4DR-tw-daN"/>
+                                            <constraint firstItem="w8o-Xd-eSt" firstAttribute="centerX" secondItem="X4u-gn-Z3w" secondAttribute="centerX" id="G4a-Ic-crq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="X4u-gn-Z3w" firstAttribute="width" secondItem="mBb-Xj-rSb" secondAttribute="width" id="9Hf-Li-hhK"/>
+                                    <constraint firstItem="p4q-dW-kec" firstAttribute="height" secondItem="mBb-Xj-rSb" secondAttribute="height" id="MBM-Tc-bGX"/>
+                                    <constraint firstItem="X4u-gn-Z3w" firstAttribute="height" secondItem="mBb-Xj-rSb" secondAttribute="height" id="WP9-tC-lsm"/>
+                                    <constraint firstItem="p4q-dW-kec" firstAttribute="width" secondItem="mBb-Xj-rSb" secondAttribute="width" id="adi-6L-Hgl"/>
+                                    <constraint firstItem="mBb-Xj-rSb" firstAttribute="centerX" secondItem="dNm-rf-CTf" secondAttribute="centerX" id="f8y-vl-3rf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dNm-rf-CTf" firstAttribute="centerX" secondItem="rlA-HM-yRt" secondAttribute="centerX" id="Eea-IR-ixn"/>
+                            <constraint firstItem="dNm-rf-CTf" firstAttribute="width" secondItem="rlA-HM-yRt" secondAttribute="width" id="HD2-xl-TLV"/>
+                            <constraint firstItem="dNm-rf-CTf" firstAttribute="height" secondItem="rlA-HM-yRt" secondAttribute="height" id="Vou-pa-2yK"/>
+                            <constraint firstItem="dNm-rf-CTf" firstAttribute="centerY" secondItem="rlA-HM-yRt" secondAttribute="centerY" id="fyB-fO-ZY1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rlA-HM-yRt"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Knob 2" id="9AJ-n3-aSZ" userLabel="Knob 2"/>
+                    <connections>
+                        <outlet property="knob2" destination="mBb-Xj-rSb" id="C35-nd-dCO"/>
+                        <outlet property="valueLabel" destination="w8o-Xd-eSt" id="vGY-WG-sld"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W0d-B4-Gbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

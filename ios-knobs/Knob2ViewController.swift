@@ -9,7 +9,9 @@
 import UIKit
 
 class Knob2ViewController: UIViewController {
-
+    @IBOutlet var valueLabel: UILabel!
+    @IBOutlet var knob2: Knob2!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
