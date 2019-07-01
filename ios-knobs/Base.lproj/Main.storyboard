@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Kh-Pd-fcw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_knobs" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,22 +18,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tjo-M0-j78" userLabel="OutsideVerticalStack">
-                                <rect key="frame" x="0.0" y="233" width="375" height="221"/>
+                                <rect key="frame" x="0.0" y="233" width="375" height="172"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jj4-yB-rZl" userLabel="HorizontalStack">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="221"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGQ-0o-ISg" userLabel="OuterKnobView">
-                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="221"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="172"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hGR-eQ-STh" userLabel="KnobStack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="221"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="172"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJj-Wc-nfy" userLabel="InnerKnobView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="110.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="86"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luO-OL-8Co" customClass="Knob" customModule="ios_knobs" customModuleProvider="target">
-                                                                        <rect key="frame" x="19" y="-19.5" width="150" height="150"/>
+                                                                        <rect key="frame" x="19" y="-32" width="150" height="150"/>
                                                                         <color key="backgroundColor" red="0.67450980390000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="luO-OL-8Co" secondAttribute="height" multiplier="1:1" id="qDh-CE-f36" userLabel="aspect = 1:1"/>
@@ -48,10 +48,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exx-D1-otE" userLabel="KnobValue">
-                                                                <rect key="frame" x="0.0" y="110.5" width="187.5" height="110.5"/>
+                                                                <rect key="frame" x="0.0" y="86" width="187.5" height="86"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cl-WN-FBH">
-                                                                        <rect key="frame" x="73" y="45" width="42" height="20.5"/>
+                                                                        <rect key="frame" x="73" y="33" width="42" height="20.5"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -79,10 +79,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayP-yl-mSN">
-                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="221"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="172"/>
                                                 <subviews>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xkb-ZM-SBe">
-                                                        <rect key="frame" x="17" y="95.5" width="154" height="31"/>
+                                                        <rect key="frame" x="17" y="71" width="154" height="31"/>
                                                         <connections>
                                                             <action selector="handleSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="waB-ty-DGE"/>
                                                         </connections>
@@ -117,6 +117,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="wdH-5C-xou"/>
                     <connections>
                         <outlet property="knob" destination="luO-OL-8Co" id="NSO-YF-rU3"/>
                         <outlet property="valueLabel" destination="3cl-WN-FBH" id="D2T-ke-MlL"/>
@@ -124,6 +125,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="110.19490254872565"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bbd-63-k57">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Kh-Pd-fcw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oSi-OM-AFA">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="zWw-X6-cmS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4c-eh-8rz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="110.19490254872565"/>
         </scene>
