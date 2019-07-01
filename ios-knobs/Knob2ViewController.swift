@@ -15,18 +15,15 @@ class Knob2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        knob2.value = 0
+        updateLabel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func handleKnobChange(_ sender: Any) {
+        updateLabel()
     }
-    */
-
+    
+    func updateLabel() {
+        valueLabel.text = String(format: "%.2f", knob2.value)
+    }
 }
