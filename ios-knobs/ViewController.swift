@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Knob1ViewController: UIViewController {
 
     @IBOutlet var valueLabel: UILabel!
     @IBOutlet var valueSlider: UISlider!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         knob.pointerLength = 12
         knob.setValue(valueSlider.value, animated: true)
         updateLabel()
-        knob.addTarget(self, action: #selector(ViewController.handleSliderValueChanged(_:)), for: .valueChanged)
+        knob.addTarget(self, action: #selector(Knob1ViewController.handleSliderValueChanged(_:)), for: .valueChanged)
     }
 
     @IBAction func handleSliderValueChanged(_ sender: Any) {
