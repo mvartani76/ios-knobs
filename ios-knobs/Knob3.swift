@@ -6,18 +6,32 @@
 //  Copyright © 2019 Michael Vartanian. All rights reserved.
 //
 
+import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-class Knob3: UIControl {
+@IBDesignable public class Knob3: UIControl {
     
-    /// Layer for the base ring.
+    @IBInspectable public var continuous = true
+    
+    /// The minimum value of the knob. Defaults to 0.0.
+    @IBInspectable public var minimumValue: Float = 0.0 { didSet { drawKnob3() }}
+    
+    /// The maximum value of the knob. Defaults to 1.0.
+    @IBInspectable public var maximumValue: Float = 1.0 { didSet { drawKnob3() }}
+    
+    /// Value of the knob. Also known as progress.
+    @IBInspectable public var value: Float = 0.0 {
+        didSet {
+            value = min(maximumValue, max(minimumValue, value))
+            setNeedsLayout()
+        }
+    }
+    
+    /// Layers
     public private(set) var outerLayer = CAShapeLayer()
     public private(set) var middleLayer1 = CAShapeLayer()
     public private(set) var middleLayer2 = CAShapeLayer()
     public private(set) var pointerLayer = CAShapeLayer()
-    public var value: Float = 0.0
-    public var minimumValue: Float = 0.0
-    public var maximumValue: Float = 1.0
     
     /// Start angle of the marker.
     public var startAngle = CGFloat.pi * 0 // -CGFloat.pi * 11 / 8.0
@@ -68,6 +82,8 @@ class Knob3: UIControl {
         middleLayer1.position = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
         middleLayer2.bounds = bounds
         middleLayer2.position = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
+        pointerLayer.bounds = bounds
+        pointerLayer.position = outerLayer.position
         
         // Draw base ring.
         let center = CGPoint(x: outerLayer.bounds.width / 2, y: outerLayer.bounds.height / 2)
@@ -118,6 +134,20 @@ class Knob3: UIControl {
     // note the use of dynamic, because calling
     // private swift selectors(@ gestureRec target:action:!) gives an exception
     @objc dynamic func handleGesture(_ gesture: Knob3GestureRecognizer) {
+        let midPointAngle = (2 * CGFloat.pi + startAngle - endAngle) / 2 + endAngle
+        
+        var boundedAngle = gesture.touchAngle
+        if boundedAngle > midPointAngle {
+            boundedAngle -= 2 * CGFloat.pi
+        } else if boundedAngle < (midPointAngle - 2 * CGFloat.pi) {
+            boundedAngle += 2 * CGFloat.pi
+        }
+        
+        boundedAngle = min(endAngle, max(startAngle, boundedAngle))
+        value = min(maximumValue, max(minimumValue, valueForAngle(boundedAngle)))
+        
+        // Inform changes based on continuous behaviour of the knob.
+        sendActions(for: .valueChanged)
     }
     
     // MARK: Value/Angle conversion
@@ -136,4 +166,63 @@ class Knob3: UIControl {
 
 /// Custom gesture recognizer for the knob.
 public class Knob3GestureRecognizer: UIPanGestureRecognizer {
+    /// Current angle of the touch related the current progress value of the knob.
+    public private(set) var touchAngle: CGFloat = 0
+    /// Horizontal and vertical slide changes for the calculating current progress value of the knob.
+    public private(set) var diagonalChange: CGSize = .zero
+    /// Horizontal and vertical slide calculation reference.
+    private var lastTouchPoint: CGPoint = .zero
+    /// Horizontal and vertical slide sensitivity multiplier. Defaults 0.005.
+    public var slidingSensitivity: CGFloat = 0.005
+    
+    // MARK: UIGestureRecognizerSubclass
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesBegan(touches, with: event)
+        
+        // Update diagonal movement.
+        guard let touch = touches.first else { return }
+        lastTouchPoint = touch.location(in: view)
+        
+        // Update rotary movement.
+        updateTouchAngleWithTouches(touches)
+    }
+    
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesMoved(touches, with: event)
+        
+        // Update diagonal movement.
+        guard let touchPoint = touches.first?.location(in: view) else { return }
+        diagonalChange.width = (touchPoint.x - lastTouchPoint.x) * slidingSensitivity
+        diagonalChange.height = (touchPoint.y - lastTouchPoint.y) * slidingSensitivity
+        
+        // Reset last touch point.
+        lastTouchPoint = touchPoint
+        
+        // Update rotary movement.
+        updateTouchAngleWithTouches(touches)
+    }
+    
+    private func updateTouchAngleWithTouches(_ touches: Set<UITouch>) {
+        guard let touch = touches.first else { return }
+        let touchPoint = touch.location(in: view)
+        touchAngle = calculateAngleToPoint(touchPoint)
+    }
+    
+    private func calculateAngleToPoint(_ point: CGPoint) -> CGFloat {
+        let centerOffset = CGPoint(x: point.x - view!.bounds.midX, y: point.y - view!.bounds.midY)
+        return atan2(centerOffset.y, centerOffset.x)
+    }
+    
+    // MARK: Lifecycle
+    public init() {
+        super.init(target: nil, action: nil)
+        maximumNumberOfTouches = 1
+        minimumNumberOfTouches = 1
+    }
+    
+    public override init(target: Any?, action: Selector?) {
+        super.init(target: target, action: action)
+        maximumNumberOfTouches = 1
+        minimumNumberOfTouches = 1
+    }
 }

@@ -16,7 +16,8 @@ class Knob3ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        knob3.value = 0
+        updateLabel()
     }
     
 
@@ -29,5 +30,11 @@ class Knob3ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func handleKnobChange(_ sender: Any) {
+        updateLabel()
+    }
+    
+    func updateLabel() {
+        valueLabel.text = String(format: "%.2f", knob3.value)
+    }
 }

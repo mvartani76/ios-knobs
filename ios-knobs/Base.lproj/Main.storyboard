@@ -213,6 +213,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gz-yd-DsT" userLabel="Knob3" customClass="Knob3" customModule="ios_knobs" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="199.5" width="375" height="199"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="handleKnobChange:" destination="2FW-xf-Dwj" eventType="valueChanged" id="32W-jm-Hk1"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2r4-mH-CmN" userLabel="LabelView">
                                         <rect key="frame" x="0.0" y="398.5" width="375" height="199.5"/>
