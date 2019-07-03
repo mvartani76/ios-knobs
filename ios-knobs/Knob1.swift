@@ -52,7 +52,7 @@ class Knob: UIControl {
     }
     
     private func commonInit() {
-        renderer.updateBounds(bounds)
+        
         renderer.color = tintColor
         renderer.setPointerAngle(renderer.startAngle, animated: false)
         
@@ -61,6 +61,12 @@ class Knob: UIControl {
         
         let gestureRecognizer = RotationGestureRecognizer(target: self, action: #selector(Knob.handleGesture(_:)))
         addGestureRecognizer(gestureRecognizer)
+    }
+    
+    // MARK: Lifecycle
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        renderer.updateBounds(bounds)
     }
     
     @objc private func handleGesture(_ gesture: RotationGestureRecognizer) {
@@ -167,7 +173,7 @@ private class KnobRenderer {
         let center = CGPoint(x: bounds.midX, y: bounds.midY)
         let offset = max(pointerLength, lineWidth  / 2)
         let radius = min(bounds.width, bounds.height) / 2 - offset
-        
+
         let ring = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle,
                                 endAngle: endAngle, clockwise: true)
         trackLayer.path = ring.cgPath
@@ -175,11 +181,16 @@ private class KnobRenderer {
     
     private func updatePointerLayerPath() {
         let bounds = trackLayer.bounds
-        
         let pointer = UIBezierPath()
-        pointer.move(to: CGPoint(x: bounds.width - CGFloat(pointerLength)
-            - CGFloat(lineWidth) / 2, y: bounds.midY))
-        pointer.addLine(to: CGPoint(x: bounds.width, y: bounds.midY))
+        
+        let offset = max(pointerLength, lineWidth  / 2)
+        let radius = min(bounds.width, bounds.height) / 2 - offset
+        
+        // 1st point is the radius
+        pointer.move(to: CGPoint(x: bounds.midX + radius, y: bounds.midY))
+        // 2nd point is the radius + pointerLength
+        pointer.addLine(to: CGPoint(x: bounds.midX + radius + pointerLength, y: bounds.midY))
+
         pointerLayer.path = pointer.cgPath
     }
     
